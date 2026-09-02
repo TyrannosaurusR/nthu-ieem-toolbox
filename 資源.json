@@ -1,0 +1,447 @@
+{
+  "meta": {
+    "title": "清大工業工程與工程管理學系(IEEM)學弟妹資源指南",
+    "compiled_date": "2026-08-22",
+    "note": "本文件彙整清大校內資源、社團、競賽計畫、求職平台與跨領域線上學習資源。分類與跨域學習方向參考《亞太地區工業工程與工程管理領域人才需求及專業能力演進報告》——核心結論是未來十年IE人才需具備「製造現場理解 × 數位優化能力(Python/資料工程/最佳化/模擬) × 永續視野」的跨域組合，建議在大三前找到「IE × 第二專長」（半導體、永續、供應鏈電商、AI/Agentic Operations等）並深耕。部分連結具時效性或非官方機構性質（見各項description備註），使用前請自行確認最新狀態：例如梅竹黑客松官網每年更新網址；STP種子人才培訓計畫為民間（台灣董事學會）而非政府計畫；SMIT採購認證部分梯次的在校生報名資格建議先洽詢協會。"
+  },
+  "categories": [
+    {
+      "id": "nthu_programs",
+      "name": "清大校內計畫資源",
+      "items": [
+        {
+          "name": "清華大學立德計畫（立德領導人才培育計畫）",
+          "description": "由旅美華裔企業家朱偉人先生於2015年捐助成立，透過三年期的實作課程、業界業師指導與跨屆學長姐社群，培育具有創新思維與領導特質的青年人才。計畫強調「做中學、學中做」，並運用Discord、LinkedIn、Notion等工具強化社群連結。",
+          "target_audience": "對領導力培養、自我探索、跨領域行動學習有興趣的清大在校生（不限科系），適合想累積軟實力、建立跨界人脈的工工系學生。",
+          "url": "https://www.nthu-leadership-program.com/"
+        },
+        {
+          "name": "清華大學創業車庫（NTHU Garage）",
+          "description": "清華大學研發處／實創中心轄下的新創育成基地，提供共用辦公空間、Maker Space、創業輔導諮詢與業師媒合，每半年招募一屆進駐團隊，歷屆已培育近百組團隊，多組已成立公司並取得對外募資。",
+          "target_audience": "有意創業或已有新創構想的清大學生與校友；工工系學生可將流程優化、供應鏈、專案管理等專長應用在實際新創營運上。",
+          "url": "https://garage.site.nthu.edu.tw/"
+        },
+        {
+          "name": "清華大學共學圈圈計畫（Co-Learning Circle Pilot Program）",
+          "description": "由教學發展中心推動，鼓勵4-8人小組自訂學習主題、跳脫課堂框架，舉辦至少4場實體／線上學習活動並繳交成果報告，可申請最高15,000元（雙語加碼5,000元）活動經費補助。",
+          "target_audience": "想自組讀書會或專題小組、深入探索課堂沒教的領域（如程式、設計、產業實務）的清大在校生（不含新生），適合想自主規劃學習內容的工工系學生。",
+          "url": "https://ctld.site.nthu.edu.tw/p/404-1217-255615.php?Lang=zh-tw"
+        }
+      ]
+    },
+    {
+      "id": "clubs",
+      "name": "校內外學生社團",
+      "items": [
+        {
+          "name": "清大設計思考與數據分析社（NTHU DTDA）",
+          "description": "以設計思考（Design Thinking）與數據分析為核心的學術性社團，透過工作坊帶領社員學習使用者研究、資料分析等實作技能，Instagram帳號持續有活動更新。",
+          "target_audience": "對使用者研究、產品設計流程、資料分析工具有興趣的學生；工作坊形式的訓練適合想快速累積作品集、但還沒決定走技術或設計路線的工工系學生。",
+          "url": "https://www.instagram.com/nthu.dtda/"
+        },
+        {
+          "name": "清大資料科學社（NTHU Data Science Club）",
+          "description": "以培養社員資料分析與機器學習實作能力為宗旨的學術性社團，透過與業界合作的專案（如自動化診斷系統、RAG檢索增強生成應用）讓社員實際操練資料科學技能。2024年由清大學生創立，起因是台大、政大、成大等校已有資料科學社團而清大沒有。",
+          "target_audience": "對資料科學、機器學習、AI應用有興趣、想累積實戰專案經驗的學生；適合工工系中對數據分析、預測模型、系統優化等應用方向有興趣的人。",
+          "url": "https://www.facebook.com/p/NTHU-Data-Science-Club-%E6%B8%85%E5%A4%A7%E8%B3%87%E6%96%99%E7%A7%91%E5%AD%B8%E7%A4%BE-61557758195549/",
+          "instagram_url": "https://www.instagram.com/nthu_dsc/"
+        },
+        {
+          "name": "清大管理顧問社（NTHU Consulting Group，管顧社）",
+          "description": "由嚮往管理顧問思維的學生於2021年成立，目標成為清交學生接軌商管求職資源與業界的橋樑，透過專案、社課與工作坊訓練數據分析、質化量化研究與商業報告製作能力，並舉辦一日管顧專案競賽等活動。",
+          "target_audience": "未來想進入顧問業、商業分析、企業策略相關領域，或想加強簡報／個案分析／商業思維的學生；適合工工系學生用來補足商管實戰能力、準備顧問業或企業MA面試。",
+          "url": "https://www.facebook.com/NTHUCG/",
+          "instagram_url": "https://www.instagram.com/nthu_consulting_group/"
+        },
+        {
+          "name": "清大賽車工廠（NTHU Racing）",
+          "description": "成立於2015年的學生賽車工程團隊，自行設計、製造、測試電動方程式賽車，代表台灣參加Formula SAE國際學生工程競賽（含日本、德國、克羅埃西亞等賽事），競賽同時涵蓋成本分析與商業企劃項目。",
+          "target_audience": "對機械設計、車輛工程、跨系實體專案有興趣的學生；工工系學生可切入車隊的成本估算、生產排程、品質管理、團隊專案管理等非純機械職能。",
+          "url": "https://www.nthuracing.com/en",
+          "instagram_url": "https://www.instagram.com/nthuracing/"
+        },
+        {
+          "name": "清大機器人團隊（DIT Robotics）",
+          "description": "隸屬動力機械系的學生機器人團隊，結合機械設計、電控、視覺辨識與程式開發自製比賽機器人，代表台灣參加法國Eurobot國際機器人大賽並屢獲佳績。",
+          "target_audience": "對機電整合、自動化、程式與感測器應用有興趣的學生；工工系學生若對自動化產線、機器人專案管理或系統整合有興趣，能藉此累積跨領域實作經驗。",
+          "url": "https://www.facebook.com/DIT.robotics/",
+          "instagram_url": "https://www.instagram.com/dit_robotics/"
+        },
+        {
+          "name": "清大區塊鏈研究社（NTHU Blockchain Club）",
+          "description": "聚焦區塊鏈學術研究、技術開發與產學連結的社團，開設讀書會與免費課程（涵蓋區塊鏈基礎、智能合約開發、DeFi、Sui/Move開發等），並協助社員組隊參加黑客松、媒合Web3工作與實習機會。原資源清單「區塊練研究社」為誤植，正確應為「區塊鏈研究社」。",
+          "target_audience": "對Web3、加密貨幣、智能合約、新興金融科技有興趣的學生；適合工工系中對金融科技、新興產業趨勢、程式應用有興趣，或想接觸區塊鏈相關實習／求職機會的人。",
+          "url": "https://www.instagram.com/nthubc/"
+        },
+        {
+          "name": "清大資訊科學研習社（NTHUTS，即原清單「清大資訊研究社」／清大資研）",
+          "description": "清大官方認證的資訊科學學術性社團，簡稱「清資社」，開設程式設計、資訊科學相關課程與活動，帶領非本科學生入門資訊技術。原資源清單寫作「清大資訊研究社」，經使用者確認即為本社（簡稱「資研」）。",
+          "target_audience": "對資訊科技、程式開發、資訊素養有興趣、想有系統地補程式基礎的學生；適合工工系中還沒決定要不要走技術路線、想先接觸看看的人。",
+          "url": "https://www.facebook.com/nthutechsociety/",
+          "instagram_url": "https://www.instagram.com/nthu.tech_society/"
+        },
+        {
+          "name": "陽明交大軟體開發社（NYCU Software Development Club, SDC）",
+          "description": "登記於陽明交通大學學生事務處之學術性社團，目標是集結交大與清大的技術人才、加速兩校資訊技術領域發展，並帶領新進成員成長為軟體開發人才。原清單「交大軟體開發社」現正式隸屬陽明交通大學。",
+          "target_audience": "對程式設計、軟體開發、跨校技術交流有興趣的清大／陽明交大學生；適合想加強coding能力、尋找跨校技術社群或未來想走軟體工程職涯的工工系學生。",
+          "url": "https://www.facebook.com/NYCUSDC/",
+          "instagram_url": "https://www.instagram.com/nycu_sdc/"
+        }
+      ]
+    },
+    {
+      "id": "programs_competitions",
+      "name": "競賽、計畫與實習",
+      "items": [
+        {
+          "name": "STP種子人才培訓計畫（Seed Talent Program）",
+          "description": "並非教育部／科技部／國科會主辦的政府計畫，而是由台灣董事學會（創辦人蔡鴻青）自2013年發起的產學橋接計畫，提供免費職場能力培訓、企業參訪與專案實作。已培育2,200多位學員，獲逾120家上市櫃企業合作。",
+          "target_audience": "北部各大學在學學生（含清大等外縣市學生跨校參與），不限科系背景，商管、社科、理工、文學皆可申請。",
+          "url": "https://stptaiwan.wixsite.com/website"
+        },
+        {
+          "name": "大專生公部門見習計畫（教育部青年發展署）",
+          "description": "俗稱的「公部門暑期實習」正式名稱為「大專生公部門見習計畫」，由教育部青年發展署協調總統府、五院及所屬中央機關開放大專生見習，每年約於4-5月、7-8月分梯次辦理，透過RICH職場體驗網申請，可實地了解政府運作與公共政策形成過程。",
+          "target_audience": "35歲以下、國內公私立大專校院在學學生（含教育部認可之國外大學台籍學生）。",
+          "url": "https://www.yda.gov.tw/plan.aspx?p=2019"
+        },
+        {
+          "name": "新竹X梅竹黑客松（HackMeiChu）",
+          "description": "由清大、陽明交大學生社群發起的梅竹系列活動之一，結合梅竹精神、駭客精神與創業家精神，邀請跨領域學生組隊在限定時間內實作最小可行產品(MVP)。官網每年以「年份.meichuhackathon.org」更新，2026年第14屆訂於9月19-20日在清大體育館舉辦。",
+          "target_audience": "全國大專院校在學學生（不限科系），鼓勵工程、設計、商管跨領域組隊。",
+          "url": "https://2026.meichuhackathon.org/"
+        },
+        {
+          "name": "全國智慧製造應用競賽",
+          "description": "由達明機器人培訓中心（TM Academy）與臺中市智慧製造技術教學中心主辦，自2022年起每年舉辦，設有大專組，競賽情境貼近實際產線（如SSD製造）智慧化與AI創新應用。適合對生產系統、自動化與智慧製造有興趣的工工系學生累積實作經驗。",
+          "target_audience": "全國大專校院在學學生（另設高中職A、B組）。",
+          "url": "https://www.academy.tm-robot.com/en/competition"
+        },
+        {
+          "name": "Six Sigma Yellow Belt Specialization（Coursera）",
+          "description": "由美國喬治亞大學系統（University System of Georgia／Kennesaw State University）於Coursera開設的六標準差線上認證課程，可免費旁聽學習，涵蓋精實六標準差核心工具與品質管理方法，是自學實用製程改善技能與累積證書的入門選擇。",
+          "target_audience": "對品質管理、製程改善、六標準差方法有興趣的大學生至碩班學生。",
+          "url": "https://www.coursera.org/specializations/six-sigma-fundamentals"
+        },
+        {
+          "name": "AI CUP 教育部全國大專校院人工智慧競賽",
+          "description": "教育部主辦的全國性AI競賽平台，每年設定貼近產業真實情境的資料分析與機器學習題目（如瑕疵檢測、生醫資料分析等），透過AIdea共創平台與T-Brain報名。適合想累積資料分析實戰作品集的工工系學生。",
+          "target_audience": "全國大專校院在學學生，不限科系但需具備資料分析／程式基礎。",
+          "url": "https://aicup.tw/"
+        },
+        {
+          "name": "ATCC 全國大專院校商業個案大賽",
+          "description": "已舉辦逾20屆、規模最大的全國商業個案競賽，每年邀請國內外知名企業、公部門與NPO提出真實商業議題，由學生團隊提出解決方案，訓練策略思考與結構化提案能力。免費報名，可跨校跨系組隊。",
+          "target_audience": "國內外各大學院校大學部或研究所在學學生，3-5人一隊。",
+          "url": "https://atcc.co/"
+        },
+        {
+          "name": "中華採購與供應管理協會（SMIT）CPPS／CPP採購認證",
+          "description": "台灣歷史最悠久的採購與供應鏈管理專業協會，提供基礎採購檢定(A.P.S.)、採購供應專業認證(CPPS)及國際認證C.P.P./CPSM等課程，是有志投入供應鏈、採購領域者累積專業證照的管道。部分梯次有資格限制，建議先洽詢協會確認在校生報名條件。",
+          "target_audience": "有志投入採購、供應鏈管理領域的大學生及社會新鮮人。",
+          "url": "https://www.smit.org.tw/"
+        },
+        {
+          "name": "台積電校園徵才暨暑期實習計畫（含DNA Internship）",
+          "description": "台積電官方學生培育計畫入口，涵蓋暑期實習（DNA Internship，開放人資、財務、供應鏈管理與風險管理等非純工程職缺）與各校聯合研發中心產學合作機會，是進入半導體業實務歷練的重要管道，表現優異者有機會取得預聘資格。",
+          "target_audience": "大三（含）以上在學學生，碩博生尤佳，不限工程背景。",
+          "url": "https://careers.tsmc.com/zh_TW/education/SearchPrograms"
+        },
+        {
+          "name": "和泰公益夢想家ESG提案實作行動",
+          "description": "和泰汽車主辦的學生ESG提案競賽，2026年為第八屆，圍繞移動自由、社會共好、人才價值、環境友善四大永續主題，入選團隊可獲最高20萬元實作津貼並由業師輔導6個月，適合想將永續發展構想落地執行的學生。",
+          "target_audience": "大專院校（含碩博）及高中職在學學生，2-6人一隊，不限國籍但需中文流暢溝通。",
+          "url": "https://www.hotaimotor.com.tw/dreamfighter/"
+        }
+      ]
+    },
+    {
+      "id": "career_platforms",
+      "name": "求職與職涯平台",
+      "items": [
+        {
+          "name": "LinkedIn Jobs",
+          "description": "外商儲備幹部(MA)、顧問業Associate等職缺常見的求職與人脈平台，在Jobs頁面用「Industrial Engineering」「Manufacturing Engineer」「Supply Chain」等英文關鍵字並篩選地點「Taiwan」，可搜到外商與跨國企業在台職缺，也能看到該公司內部有哪些校友或人脈可協助內推。建議把個人檔案填到完整度All Star並開啟「Open to Work」設定，提高被獵頭主動聯繫的機率。",
+          "target_audience": "有意投外商儲備幹部(MA)、顧問業Associate，或想拓展國際人脈與東南亞外派機會的工工系學生。",
+          "url": "https://www.linkedin.com/jobs/"
+        },
+        {
+          "name": "CakeResume（現整合為Cake）",
+          "description": "原為台灣新創起家的線上履歷平台，官方網域已整併為cake.me，提供區塊式履歷編輯器、線上作品集頁面與台灣在地職缺搜尋，合作企業涵蓋台積電等半導體大廠。可用它把專案報告、實習經歷、Python/OR分析成果整理成一頁式作品集連結，附在投遞履歷或LinkedIn簡介中使用。",
+          "target_audience": "需要快速做出視覺化履歷或線上作品集頁面的應屆畢業生，尤其投遞新創、電商、外商的學生。",
+          "url": "https://www.cake.me/"
+        },
+        {
+          "name": "104人力銀行",
+          "description": "台灣最大的綜合型人力銀行，職缺量與薪資揭露率高，適合查詢半導體業「設備工程師」「製程整合工程師」「IPQC」等實際職缺內容與待遇區間。也可利用「薪資情報」與公司頁面功能，交叉比對不同公司同職類的起薪落點與福利。",
+          "target_audience": "求職初期想大量瀏覽台灣本地職缺、比較同職類公司待遇的學生。",
+          "url": "https://www.104.com.tw/"
+        },
+        {
+          "name": "Glassdoor",
+          "description": "國際型的公司評價與薪資查詢平台，可搜尋Taipei/Taiwan地區特定職稱（如Process Engineer、Supply Chain Analyst）的薪資範圍與員工對公司文化的匿名評論；沒有獨立的「台灣站」，是在全球資料庫中以城市/國家篩選。適合拿到外商或半導體業offer後，交叉比對台灣同業薪資是否與104、Levels.fyi的數字一致。",
+          "target_audience": "準備和外商或半導體大廠面談薪資、想看員工真實評價的學生。",
+          "url": "https://www.glassdoor.com/Salaries/index.htm"
+        },
+        {
+          "name": "Levels.fyi",
+          "description": "蒐集科技與半導體業員工自主回報的薪酬數據，並依公司職級拆解本薪、股票、獎金（例如台積電各Level皆有對應薪資區間），也提供中文介面。拿到半導體IM工程師、設備/製程工程師等職位offer後，可依職級精確比對市場行情，避免用籠統的「年薪」數字誤判待遇高低。",
+          "target_audience": "拿到半導體業或科技業offer、需要依職級細拆薪資結構做比較的學生。",
+          "url": "https://www.levels.fyi/"
+        },
+        {
+          "name": "1111人力銀行",
+          "description": "台灣主要人力銀行之一，職缺涵蓋製造業、供應鏈與行政幕僚類別，並提供適合度測評、履歷診療等輔助工具。可作為104之外的第二個職缺來源，交叉核對同一家公司是否同時在兩平台刊登、待遇條件是否一致。",
+          "target_audience": "想擴大職缺蒐尋範圍、交叉核對104資訊的求職學生。",
+          "url": "https://www.1111.com.tw/"
+        },
+        {
+          "name": "Yourator",
+          "description": "專注新創、數位與顧問業的人才媒合平台，職缺集中在軟體科技、金融科技、顧問與新創公司，並定期舉辦數位職涯博覽會。若想走供應鏈/採購分析或顧問業Associate路線、但目標是新創或中小型顧問公司，可在此找到104、LinkedIn上較少露出的職缺。",
+          "target_audience": "想進新創公司或中小型顧問業、104/LinkedIn職缺覆蓋不到的學生。",
+          "url": "https://www.yourator.co/"
+        },
+        {
+          "name": "國立清華大學職涯發展組（職涯發展中心）",
+          "description": "隸屬學務處，提供一對一職涯諮詢、企業參訪、校園徵才、企業領航課程、實習媒合與職缺搜尋系統等服務。可透過此單位預約免費履歷健診、參加校園徵才場次接觸半導體大廠與顧問公司，或查詢畢業流向調查了解各職涯路徑在學長姐中的實際比例。",
+          "target_audience": "在校清大工工系學生，尤其想預約免費履歷/面試諮詢或參加校內徵才活動者。",
+          "url": "https://ccd.nthu.edu.tw/"
+        },
+        {
+          "name": "GitHub Profile README（個人主頁作品集）",
+          "description": "GitHub官方功能：只要建立一個與帳號同名的public repository並寫README.md，內容就會顯示在個人主頁最上方，等於一份「可執行的履歷」。非資工背景的工科學生可以用它整理Python資料分析、作業研究(OR)排程模型、模擬專案的連結與簡介，讓面試官不用逐一點開就能快速看到你做過什麼。",
+          "target_audience": "想用GitHub展示Python/OR/資料分析專案、但沒有資工科班履歷網站經驗的學生。",
+          "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme"
+        },
+        {
+          "name": "GitHub Pages Quickstart（免費履歷網站教學）",
+          "description": "GitHub官方入門教學，教你如何用一個repository免費架設並發布靜態網站，不需要自己買主機或網域。可以用它把課堂專題（例如產線模擬、線性規劃排程結果）做成一頁式網頁報告，比純PDF更容易在履歷或LinkedIn貼連結展示。",
+          "target_audience": "想免費架設個人履歷/作品集網站、不想從零學後端架站的學生。",
+          "url": "https://docs.github.com/en/pages/quickstart"
+        },
+        {
+          "name": "LinkedIn個人頁面優化6技巧（Yourator專欄）",
+          "description": "Yourator職涯專欄由人資角度整理出6個優化LinkedIn頁面的技巧，包含把檔案填到「All Star」完整度、累積500+聯絡人、追蹤目標企業、開啟「開放看新工作」設定與追蹤頁面訪客數據等，是動手優化LinkedIn前可以先讀的實作清單。",
+          "target_audience": "已建立LinkedIn帳號但想提高被獵頭/HR搜尋到機率的求職學生。",
+          "url": "https://www.yourator.co/articles/214"
+        }
+      ]
+    },
+    {
+      "id": "data_science_learning",
+      "name": "跨域學習：程式與資料科學",
+      "items": [
+        {
+          "name": "Kaggle",
+          "description": "全球最大的資料科學競賽與資料集平台，內建免費雲端Notebook（含GPU），可直接在瀏覽器寫Python分析真實資料，不需自架環境。對非資工背景的工工系學生來說，是把課堂學到的統計、最適化知識轉成實作作品集最快的途徑。",
+          "target_audience": "已具備基礎Python語法、想透過實戰競賽與真實資料集練習資料分析與機器學習的工工系學生。",
+          "url": "https://www.kaggle.com/"
+        },
+        {
+          "name": "Hugging Face",
+          "description": "開源機器學習社群平台，提供大量預訓練模型、資料集與線上課程，可免費呼叫現成AI模型完成文字、影像等任務。不必先搞懂深度學習底層數學，就能把生成式AI能力整合進專題或作業。",
+          "target_audience": "想了解或應用現成AI／機器學習模型、探索生成式AI與NLP應用的工工系學生。",
+          "url": "https://huggingface.co/"
+        },
+        {
+          "name": "清華磨課師 NTHU MOOCs",
+          "description": "清華大學官方線上課程平台，開設「Python語言程式入門」「資料探勘與應用」「人工智慧導論」等中文授課課程，由本校師資教學、對應本地學習習慣。可用校內認證課程補足程式與資料科學基礎，部分課程亦可作為學習歷程或抵免參考。",
+          "target_audience": "希望以中文、校內熟悉教學方式從零開始學程式與資料科學基礎的清大工工系學生。",
+          "url": "https://mooc.nthu.edu.tw/"
+        },
+        {
+          "name": "Coursera：Python for Everybody",
+          "description": "密西根大學開設的入門程式設計專項課程，專為完全零基礎的學習者設計，從變數、迴圈教到網頁資料擷取與資料庫，是全球最多人使用的Python入門教材之一。適合工程管理背景的學生從最基礎的程式邏輯打底，再銜接後續資料分析應用。",
+          "target_audience": "沒有寫過程式、需要從Python語法基礎打底的工工系新手。",
+          "url": "https://www.coursera.org/specializations/python"
+        },
+        {
+          "name": "Google Data Analytics 專業證照（Coursera）",
+          "description": "Google親自設計的資料分析職能證照課程，教授試算表、SQL、Python、Tableau等業界常用工具，並以真實商業案例練習資料清理與視覺化。免費旁聽即可看完整課程內容，僅認證需付費；同系列的Google Machine Learning Crash Course則是完全免費、想進一步碰機器學習的下一步。",
+          "target_audience": "想銜接產業對資料分析職能的要求、規劃考取國際認可證照的工工系學生。",
+          "url": "https://www.coursera.org/professional-certificates/google-data-analytics"
+        },
+        {
+          "name": "DataCamp",
+          "description": "以「邊做邊學」聞名的互動式資料科學學習平台，直接在瀏覽器分段練習Python、R、SQL程式碼並即時得到回饋，特別適合完全沒寫過程式的初學者建立信心。課程路徑涵蓋資料工程、機器學習到雲端資料倉儲，對應報告指出的工工人才核心能力缺口。",
+          "target_audience": "偏好互動式小步驟練習而非長篇影片教學、想系統化補齊資料科學技能樹的工工系學生。",
+          "url": "https://www.datacamp.com/"
+        },
+        {
+          "name": "freeCodeCamp",
+          "description": "完全免費且開源的程式學習平台，提供內含數千小時教材的資料分析（Python）、機器學習等認證路徑，做完專案就能拿到證書。對預算有限、想紮實從零練習寫程式邏輯的學生而言，是CP值最高的自學管道之一。",
+          "target_audience": "想長期、免費、有系統地練習寫程式與資料分析專題的工工系學生。",
+          "url": "https://www.freecodecamp.org/"
+        },
+        {
+          "name": "edX",
+          "description": "由哈佛、MIT共同創辦的線上課程平台，收錄如MIT「Introduction to Computer Science and Programming Using Python」等扎實的程式與資料科學課程，旁聽課程內容完全免費。適合想用大學等級的嚴謹課程補齊統計與程式基礎的學生。",
+          "target_audience": "想以頂尖大學課程等級補強程式設計與資料科學理論基礎的工工系學生。",
+          "url": "https://www.edx.org/"
+        },
+        {
+          "name": "Hahow好學校：Python資料分析",
+          "description": "台灣本土線上課程平台，「Python資料分析－網頁爬蟲與視覺呈現」等課程以中文講解、貼近台灣職場情境與案例，適合不習慣英文教學、想搭配中文討論區發問的學生。可作為進一步練習網路爬蟲、資料視覺化等實用技能的付費選項。",
+          "target_audience": "希望用中文學習、且想練習網路爬蟲與資料視覺化等應用技能的工工系學生。",
+          "url": "https://hahow.in/courses/5d9c405e6f4b130023e9999d"
+        },
+        {
+          "name": "台灣資料科學協會 Data Science Association",
+          "description": "台灣最大的資料科學社群，定期舉辦免費「版聚」分享業界實戰經驗，並提供「領航計畫」等免費三個月一對一導師媒合，協助轉職者與學生釐清資料科學職涯方向。是課堂外最直接了解業界實際在用什麼工具的產業連結管道。",
+          "target_audience": "想認識資料科學業界人士、了解實際職場所需技能與職涯路徑的工工系學生。",
+          "url": "https://www.datascienceassoc.org/"
+        },
+        {
+          "name": "Python官方教學文件",
+          "description": "Python語言的官方文件與教學（The Python Tutorial），內容準確且隨版本更新，是查證任何語法疑問最權威的第一手資料來源。在其他平台學到一半卡關時，養成回頭查官方文件的習慣，是從「跟著教學影片做」進階到「看得懂文件自己寫程式」的關鍵一步。",
+          "target_audience": "已有基礎Python概念、想養成查閱原始文件習慣以獨立解決問題的工工系學生。",
+          "url": "https://docs.python.org/3/tutorial/index.html"
+        },
+        {
+          "name": "LeetCode",
+          "description": "全球最多人使用的程式邏輯與演算法練習平台，題目依資料結構、演算法分類，並附他人解法討論區可參考。除了學資料分析工具，也需要練習「把問題拆解成程式邏輯」的思考方式，這正是LeetCode逐題訓練的能力，對未來面試技術職也有直接幫助。",
+          "target_audience": "已具備Python基礎語法、想加強程式邏輯與演算法思維的工工系學生。",
+          "url": "https://leetcode.com/"
+        }
+      ]
+    },
+    {
+      "id": "or_simulation_tools",
+      "name": "跨域學習：作業研究與模擬工具",
+      "items": [
+        {
+          "name": "Gurobi Optimizer（學術授權 Academic License）",
+          "description": "業界公認最快的商用數學規劃求解器，支援線性規劃、混合整數規劃(MILP)、二次規劃等，是金融、物流、供應鏈公司做排程與資源分配決策時的標準工具。用學校信箱在官網註冊即可申請Named-User Academic License，免費取得無模型大小限制的完整版（一年期、可續），畢業後還能透過Take Gurobi With You方案延續使用。",
+          "target_audience": "想學習/實作線性規劃與混合整數規劃、準備用最佳化技能做專題競賽或求職的工工系學生。",
+          "url": "https://www.gurobi.com/academics/"
+        },
+        {
+          "name": "PuLP",
+          "description": "Python的開源線性規劃/混合整數規劃建模套件，屬於COIN-OR專案的一部分，可用簡潔的Python語法定義目標式與限制式，再呼叫內建的CBC或GLPK、CPLEX、Gurobi等後端求解器求解。完全免費、pip install pulp即可安裝，是初學者從Excel規劃求解工具進階到「用程式做線性規劃」最常見的第一步。",
+          "target_audience": "剛開始學線性規劃、想用Python而非Excel求解器寫作業與專題的初學者。",
+          "url": "https://pypi.org/project/PuLP/"
+        },
+        {
+          "name": "Google OR-Tools",
+          "description": "Google開源釋出的組合最佳化工具箱，內建車輛路徑規劃(VRP)、排程、裝箱、線性/整數規劃等多種求解器，其中CP-SAT是公認求解排程類問題最快的開源求解器之一。支援Python/C++/Java/C#，官方文件附大量可直接執行的範例，適合拿來練習把最佳化演算法應用在物流、供應鏈等真實案例。",
+          "target_audience": "想免費學習排程、路徑規劃、裝箱等組合最佳化問題實作的工工系學生。",
+          "url": "https://developers.google.com/optimization"
+        },
+        {
+          "name": "AnyLogic（PLE 個人學習版）",
+          "description": "少數同時支援離散事件模擬、系統動力學、代理人基模擬(Agent-Based)三種方法的模擬軟體，廣泛用於供應鏈、製造、醫療系統的數位孿生建模。官方提供完全免費的Personal Learning Edition (PLE)供學生自學與課堂使用。",
+          "target_audience": "想入門離散事件模擬/系統動力學/代理人基模擬、做數位孿生專題的工工系學生。",
+          "url": "https://www.anylogic.com/resources/anylogic-for-academia/"
+        },
+        {
+          "name": "FlexSim（學生版）",
+          "description": "3D視覺化的離散事件模擬軟體，被全球數百所大學用於教學與研究，強項是把工廠產線、物流中心等系統做成互動式3D動畫模型以驗證產能與找瓶頸。已於2023年被Autodesk收購，可到官網申請免費學生版（物件數量有限制）或14天完整功能試用版。",
+          "target_audience": "想做工廠/物流系統3D視覺化模擬專題的工工系學生。",
+          "url": "https://www.flexsim.com/academia/"
+        },
+        {
+          "name": "Siemens Tecnomatix Plant Simulation（學生版）",
+          "description": "西門子旗下的3D物流建模與離散事件模擬工具，是製造業做產能規劃、產線佈局與物料流分析時常用的業界軟體，屬於Siemens數位孿生(Digital Twin)產品線之一。高中以上在學學生可在官網免費下載學生版（單一模擬最多80個物件、授權一年可續），僅限個人學習用途。",
+          "target_audience": "想接觸業界常用數位孿生/物流模擬軟體、了解製造業產能規劃流程的工工系學生。",
+          "url": "https://resources.sw.siemens.com/en-US/download-tecnomatix-plant-simulation-student-software/"
+        },
+        {
+          "name": "SimPy",
+          "description": "純Python寫成的開源離散事件模擬框架，用Python的generator函式描述製程、顧客、車輛等「活動個體」，並提供Resource物件模擬排隊、產能有限的服務站等情境。完全免費、程式碼透明，且能直接跟pandas、numpy等資料科學套件整合，適合把排隊論、產能分析等工工核心概念寫成可執行的模擬程式。",
+          "target_audience": "想用Python自己寫離散事件模擬、不想依賴商用授權軟體的工工系學生。",
+          "url": "https://simpy.readthedocs.io/"
+        },
+        {
+          "name": "LINGO",
+          "description": "LINDO Systems開發的數學規劃建模軟體，用接近數學式的LINGO語言直接寫出線性、非線性、二次規劃、整數規劃模型並求解，是不少作業研究教科書範例採用的軟體之一。官網提供功能完整、但限制題目規模的免費試用版可直接下載。",
+          "target_audience": "修習作業研究課程、需要用教科書慣用的LP/IP建模語言驗算作業的工工系學生。",
+          "url": "https://www.lindo.com/index.php/2-uncategorised/237-freetrial"
+        },
+        {
+          "name": "IBM ILOG CPLEX Optimization Studio",
+          "description": "IBM旗下的商用數學規劃求解器，是與Gurobi齊名的業界標準線性規劃/混合整數規劃引擎，內建CPLEX求解器與OPL建模語言，也能透過docplex套件用Python呼叫。學生與教職員可透過IBM Academic Initiative免費取得無模型規模限制的完整版；不想註冊的話也有免費但限1000變數/1000限制式的CPLEX Community Edition。",
+          "target_audience": "想比較不同商用求解器、或實驗室慣用CPLEX的工工系學生。",
+          "url": "https://ibm.biz/CPLEXonAI"
+        },
+        {
+          "name": "Operations Research (2): Optimization Algorithms（Coursera, 台大）",
+          "description": "台灣大學孔令傑教授開設的Coursera課程，講解Simplex法、Branch-and-Bound、梯度下降、Newton法等最佳化演算法背後的數學原理，並實作用Python呼叫Gurobi求解器解線性規劃/整數規劃/非線性規劃問題。課程免費旁聽（付費才能拿證書），評分4.9/5；同系列還有偏應用面的Operations Research (1): Models and Applications可作先修。",
+          "target_audience": "想搞懂最佳化演算法數學原理、並學會用Python串接Gurobi求解器的工工系學生。",
+          "url": "https://www.coursera.org/learn/operations-research-algorithms"
+        }
+      ]
+    },
+    {
+      "id": "sustainability_esg",
+      "name": "跨域學習：永續與ESG",
+      "items": [
+        {
+          "name": "GHG Protocol（溫室氣體盤查議定書）",
+          "description": "由世界資源研究所（WRI）與世界企業永續發展委員會（WBCSD）共同發起，是全球最廣泛採用的溫室氣體排放量測與管理標準制定機構。網站提供企業、城市、國家層級的盤查標準、計算工具與線上教育訓練。",
+          "target_audience": "有意投入企業碳盤查、ESG部門或永續顧問工作的學生。",
+          "url": "https://ghgprotocol.org/"
+        },
+        {
+          "name": "ISO 14064-1:2018（溫室氣體盤查國際標準）",
+          "description": "ISO官方制定的組織層級溫室氣體排放量化與報告國際標準，規範企業建立、管理、報告與查證溫室氣體清冊的原則與要求。是企業取得第三方查證、參與碳交易與供應鏈揭露時最常被引用的基礎依據。",
+          "target_audience": "想了解碳盤查查證機制、未來從事永續稽核或顧問工作的學生。",
+          "url": "https://www.iso.org/standard/66453.html"
+        },
+        {
+          "name": "歐盟碳邊境調整機制（CBAM）",
+          "description": "歐盟執委會稅務關務總署官方說明頁面，介紹CBAM如何對進口高碳排產品（鋼鐵、水泥、鋁、肥料、電力、氫）課徵碳關稅，以防止碳洩漏並鼓勵全球清潔生產。CBAM於2026年起進入正式實施階段，是台灣出口導向製造業必須因應的重要法規。",
+          "target_audience": "關心綠色供應鏈、未來想進入外貿或製造業ESG部門的學生。",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+        },
+        {
+          "name": "臺灣碳權交易所（TCX）",
+          "description": "由國發會與台灣證券交易所共同出資成立的官方碳權交易平台，提供國內減量額度交易、國際碳權買賣，以及碳諮詢與教育訓練服務。站內「碳學堂」單元適合初學者了解碳權基本概念與台灣2050淨零政策。",
+          "target_audience": "想了解台灣碳交易制度、對綠色金融或碳資產管理有興趣的學生。",
+          "url": "https://www.tcx.com.tw/zh/"
+        },
+        {
+          "name": "openLCA（免費生命週期評估工具）",
+          "description": "由GreenDelta自2006年起開發維護的免費開源生命週期評估（LCA）與碳足跡分析軟體，全球逾百國的企業、顧問公司與大學課程採用作為教學工具。可用於實作產品碳足跡計算、環保設計與供應鏈環境衝擊評估，是入門LCA最容易取得的工具。",
+          "target_audience": "想動手實作LCA分析、準備碳足跡相關專題或論文的學生。",
+          "url": "https://www.openlca.org/"
+        }
+      ]
+    },
+    {
+      "id": "soft_skills",
+      "name": "軟實力與職涯素養",
+      "items": [
+        {
+          "name": "Tableau Public",
+          "description": "Tableau官方推出的免費資料視覺化平台，提供網頁版製圖工具與可下載的Tableau Desktop Public Edition，不需寫程式即可用拖拉方式建立互動式圖表。平台同時是全球最大的視覺化作品分享社群，可下載他人作品觀摩製圖邏輯，快速累積作品集。",
+          "target_audience": "想累積資料視覺化作品集、準備實習或求職簡報的學生。",
+          "url": "https://www.tableau.com/products/public"
+        },
+        {
+          "name": "Microsoft Power BI Learn 官方學習路徑",
+          "description": "微軟官方免費線上學習平台，提供從資料連接、清理、建模到視覺化報表設計的完整Power BI學習路徑，並可銜接PL-300國際證照模擬測驗。內容循序漸進、完全免費，適合零基礎自學者。",
+          "target_audience": "想考取Power BI證照或補強資料分析工具實作能力的學生。",
+          "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi"
+        },
+        {
+          "name": "Storytelling with Data",
+          "description": "由暢銷書作者Cole Nussbaumer Knaflic創辦的資料敘事教學平台，透過部落格、Podcast、圖表改造範例與線上課程，教導如何把圖表轉化為能推動決策的故事。其同名書籍是全球百餘所大學採用的教科書，適合補強「用數據說故事」的軟實力。",
+          "target_audience": "想提升簡報中的資料敘事能力、加強跨部門溝通表達的學生。",
+          "url": "https://www.storytellingwithdata.com/"
+        },
+        {
+          "name": "TOEIC臺灣區官方網站（忠欣股份有限公司）",
+          "description": "ETS台灣官方總代理忠欣股份有限公司經營的多益測驗官網，提供聽力與閱讀、口說與寫作等測驗的報名、成績查詢與備考資源一站式服務。多益成績是台灣職場與研究所申請中常見的英語能力佐證。",
+          "target_audience": "準備考取多益證明英語能力、規劃海外實習或留學的學生。",
+          "url": "https://www.toeic.com.tw/"
+        },
+        {
+          "name": "國際演講會第67地區（Toastmasters Taiwan District 67）",
+          "description": "國際演講會（Toastmasters International）在台灣的官方分部，透過全台173個分會的例會與Pathways學習路徑，提供公開演講與領導力的實作訓練場域。適合想在低壓力、支持性環境中持續練習簡報、即席問答與跨部門溝通技巧的學生長期參與。",
+          "target_audience": "想長期精進口語表達、簡報與領導溝通能力的學生。",
+          "url": "https://www.toastmasters.org.tw/"
+        }
+      ]
+    }
+  ]
+}

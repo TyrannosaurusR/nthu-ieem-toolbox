@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工工百寶箱</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B0%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EFF3F2;
+    --surface: #FFFFFF;
+    --surface-2: #E4EAE8;
+    --surface-3: #DCE4E2;
+    --ink: #16262A;
+    --ink-muted: #4C6066;
+    --ink-faint: #7C8E8B;
+    --line: rgba(22,38,42,0.14);
+    --line-strong: rgba(22,38,42,0.26);
+    --accent: #C97A2E;
+    --accent-ink: #FFFFFF;
+    --accent-soft: rgba(201,122,46,0.12);
+    --accent-2: #1F6F68;
+    --accent-2-ink: #FFFFFF;
+    --accent-2-soft: rgba(31,111,104,0.10);
+    --shadow: 0 1px 2px rgba(22,38,42,0.06), 0 8px 24px rgba(22,38,42,0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1A1C;
+      --surface: #16262A;
+      --surface-2: #1C2E31;
+      --surface-3: #223638;
+      --ink: #E7EEEC;
+      --ink-muted: #9FB4B0;
+      --ink-faint: #6E8481;
+      --line: rgba(231,238,236,0.14);
+      --line-strong: rgba(231,238,236,0.26);
+      --accent: #E2954A;
+      --accent-ink: #17110A;
+      --accent-soft: rgba(226,149,74,0.16);
+      --accent-2: #4FB3A9;
+      --accent-2-ink: #0B1F1D;
+      --accent-2-soft: rgba(79,179,169,0.14);
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1A1C;
+    --surface: #16262A;
+    --surface-2: #1C2E31;
+    --surface-3: #223638;
+    --ink: #E7EEEC;
+    --ink-muted: #9FB4B0;
+    --ink-faint: #6E8481;
+    --line: rgba(231,238,236,0.14);
+    --line-strong: rgba(231,238,236,0.26);
+    --accent: #E2954A;
+    --accent-ink: #17110A;
+    --accent-soft: rgba(226,149,74,0.16);
+    --accent-2: #4FB3A9;
+    --accent-2-ink: #0B1F1D;
+    --accent-2-soft: rgba(79,179,169,0.14);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-soft); }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+
+  header.masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    font-weight: 600;
+  }
+  h1.title {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    line-height: 0.92;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  p.lede {
+    max-width: 62ch;
+    font-size: 1.02rem;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+  p.lede strong { color: var(--ink); font-weight: 600; }
+
+  .group-toggle {
+    display: inline-flex;
+    gap: 0.35rem;
+    padding: 0.35rem;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    margin-top: 0.4rem;
+  }
+  .group-btn {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.86rem;
+    letter-spacing: 0.02em;
+    padding: 0.55rem 1.3rem;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .group-btn:hover { color: var(--ink); }
+  .group-btn.active {
+    background: var(--accent-2);
+    color: var(--accent-2-ink);
+  }
+  .group-btn:focus-visible, .subtab:focus-visible, .card-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .subtabs {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin: 1.6rem 0 0.4rem;
+  }
+  .subtab {
+    flex: 1 1 210px;
+    min-width: 190px;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    transition: border-color 0.15s ease, transform 0.1s ease, background 0.15s ease;
+  }
+  .subtab:hover { border-color: var(--line-strong); transform: translateY(-1px); }
+  .subtab.active {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+  .subtab .st-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .subtab .st-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.94rem;
+    color: var(--ink);
+  }
+  .subtab .st-count {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+  }
+  .subtab .st-sub {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+
+  .cat-heading {
+    margin: 2.2rem 0 1.1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .cat-heading h2 {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .cat-heading .cat-sub {
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+  }
+  .subgroup-heading {
+    grid-column: 1 / -1;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-top: 1rem;
+    padding-top: 0.7rem;
+    border-top: 1px dashed var(--line-strong);
+  }
+  .subgroup-heading.first {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+  .card {
+    height: 100%;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.15rem 1.25rem 1.25rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+    white-space: nowrap;
+  }
+  .card p.desc {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    flex: 1;
+  }
+  .ratings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.9rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    background: var(--surface-2);
+    border-radius: 8px;
+    padding: 0.45rem 0.65rem;
+  }
+  .ratings .r-item { display: inline-flex; align-items: center; gap: 0.35rem; white-space: nowrap; }
+  .ratings .r-label { color: var(--ink-faint); }
+  .ratings .r-stars { color: var(--accent); letter-spacing: 1px; }
+  .audience {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    border-top: 1px dashed var(--line);
+    padding-top: 0.55rem;
+  }
+  .audience .lbl {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-right: 0.35rem;
+  }
+  .card-links {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.15rem;
+    flex-wrap: wrap;
+  }
+  .card-link {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent-2-ink);
+    background: var(--accent-2);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: opacity 0.15s ease;
+  }
+  .card-link:hover { opacity: 0.85; }
+  .card-link.ig {
+    background: transparent;
+    color: var(--ink-muted);
+    border: 1px solid var(--line-strong);
+  }
+  .card-link.unavailable {
+    background: transparent;
+    color: var(--ink-faint);
+    border: 1px dashed var(--line-strong);
+    cursor: default;
+  }
+
+  footer.note {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    max-width: 72ch;
+  }
+
+  @media (max-width: 640px) {
+    .group-toggle { width: 100%; }
+    .group-btn { flex: 1; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">NTHU IEEM · 學弟妹資源站</span>
+    <h1 class="title">工工百寶箱</h1>
+    <p class="lede">清大工業工程與工程管理學系的資源整理。<strong>工工不是只能去帶線</strong>——半導體、供應鏈、顧問業、AI、跨域學程，都有工工人的位置。上面切「找機會 / 練技能」，下面選你有感覺的主題就好，不用整份看完。標星等的項目，難度／收穫／熱門程度都是主觀評估，僅供參考。</p>
+    <div class="group-toggle" id="groupToggle"></div>
+  </header>
+
+  <nav class="subtabs" id="subtabs"></nav>
+
+  <div class="cat-heading" id="catHeading"></div>
+  <section class="grid" id="grid"></section>
+
+  <footer class="note">
+    部分連結具時效性或非官方機構性質：梅竹黑客松官網每年改版更新網址；STP種子人才培訓計畫是民間（台灣董事學會）而非政府計畫；SMIT採購認證部分梯次的在校生報名資格建議先洽詢協會確認。NVIDIA Omniverse於2026年5月起開放免費使用，若政策調整請以官網為準。資料整理參考《亞太地區工業工程與工程管理領域人才需求及專業能力演進報告》，彙整日期 2026-09-02。
+  </footer>
+
+</div>
+
+<script type="application/json" id="ieem-data">
+{
+  "groups": [
+    { "id": "opportunity", "label": "找機會", "categories": ["nthu_programs", "clubs", "programs_competitions", "career_platforms"] },
+    { "id": "skills", "label": "練技能", "categories": ["data_science_learning", "or_simulation_tools", "academic_programs", "soft_skills"] }
+  ],
+  "categories": [
+    {
+      "id": "nthu_programs",
+      "label": "校內資源",
+      "subtitle": "清大自己的資源，離你最近的起點",
+      "items": [
+        {
+          "name": "清華大學立德計畫（立德領導人才培育計畫）",
+          "tags": ["領導力", "獎學金", "跨域學習"],
+          "description": "由旅美華裔企業家朱偉人先生於2015年捐助成立，透過三年期的實作課程、業界業師指導與跨屆學長姐社群，培育具有創新思維與領導特質的青年人才。計畫強調「做中學、學中做」，並運用Discord、LinkedIn、Notion等工具強化社群連結。",
+          "audience": "對領導力培養、自我探索、跨領域行動學習有興趣的清大在校生（不限科系），適合想累積軟實力、建立跨界人脈的工工系學生。",
+          "url": "https://www.nthu-leadership-program.com/"
+        },
+        {
+          "name": "清華大學創業車庫（NTHU Garage）",
+          "tags": ["創業", "新創", "育成"],
+          "description": "清華大學研發處／實創中心轄下的新創育成基地，提供共用辦公空間、Maker Space、創業輔導諮詢與業師媒合，每半年招募一屆進駐團隊，歷屆已培育近百組團隊，多組已成立公司並取得對外募資。",
+          "audience": "有意創業或已有新創構想的清大學生與校友；工工系學生可將流程優化、供應鏈、專案管理等專長應用在實際新創營運上。",
+          "url": "https://garage.site.nthu.edu.tw/"
+        },
+        {
+          "name": "清華大學共學圈圈計畫（Co-Learning Circle）",
+          "tags": ["自主學習", "讀書會", "經費補助"],
+          "description": "由教學發展中心推動，鼓勵4-8人小組自訂學習主題、跳脫課堂框架，舉辦至少4場實體／線上學習活動並繳交成果報告，可申請最高15,000元（雙語加碼5,000元）活動經費補助。",
+          "audience": "想自組讀書會或專題小組、深入探索課堂沒教的領域（如程式、設計、產業實務）的清大在校生（不含新生）。",
+          "url": "https://ctld.site.nthu.edu.tw/p/404-1217-255615.php?Lang=zh-tw"
+        }
+      ]
+    },
+    {
+      "id": "clubs",
+      "label": "社團",
+      "subtitle": "不確定興趣在哪，先加一個看看",
+      "items": [
+        {
+          "name": "清大設計思考與數據分析社（NTHU DTDA）",
+          "tags": ["設計思考", "資料分析", "工作坊"],
+          "description": "以設計思考（Design Thinking）與數據分析為核心的學術性社團，透過工作坊帶領社員學習使用者研究、資料分析等實作技能。",
+          "audience": "對使用者研究、產品設計流程、資料分析工具有興趣的學生；適合想快速累積作品集、但還沒決定走技術或設計路線的人。",
+          "url": "https://www.instagram.com/nthu.dtda/"
+        },
+        {
+          "name": "清大資料科學社（NTHU Data Science Club）",
+          "tags": ["AI", "資料科學", "機器學習"],
+          "description": "以培養社員資料分析與機器學習實作能力為宗旨的學術性社團，透過與業界合作的專案（如自動化診斷系統、RAG檢索增強生成應用）讓社員實際操練資料科學技能。2024年由清大學生創立。",
+          "audience": "對資料科學、機器學習、AI應用有興趣、想累積實戰專案經驗的學生。",
+          "url": "https://www.facebook.com/p/NTHU-Data-Science-Club-%E6%B8%85%E5%A4%A7%E8%B3%87%E6%96%99%E7%A7%91%E5%AD%B8%E7%A4%BE-61557758195549/",
+          "ig": "https://www.instagram.com/nthu_dsc/"
+        },
+        {
+          "name": "清大管理顧問社（NTHU Consulting Group）",
+          "tags": ["顧問業", "商業分析", "面試準備"],
+          "description": "由嚮往管理顧問思維的學生於2021年成立，目標成為清交學生接軌商管求職資源與業界的橋樑，透過專案、社課與工作坊訓練數據分析、質化量化研究與商業報告製作能力。",
+          "audience": "未來想進入顧問業、商業分析、企業策略相關領域，或想加強簡報／個案分析的學生；適合用來準備顧問業或企業MA面試。",
+          "url": "https://www.facebook.com/NTHUCG/",
+          "ig": "https://www.instagram.com/nthu_consulting_group/"
+        },
+        {
+          "name": "清大賽車工廠（NTHU Racing）",
+          "tags": ["機械工程", "專案管理", "國際競賽"],
+          "description": "成立於2015年的學生賽車工程團隊，自行設計、製造、測試電動方程式賽車，代表台灣參加Formula SAE國際學生工程競賽，競賽同時涵蓋成本分析與商業企劃項目。",
+          "audience": "對機械設計、車輛工程、跨系實體專案有興趣的學生；工工系學生可切入車隊的成本估算、生產排程、品質管理等非純機械職能。",
+          "url": "https://www.nthuracing.com/en",
+          "ig": "https://www.instagram.com/nthuracing/"
+        },
+        {
+          "name": "清大機器人團隊（DIT Robotics）",
+          "tags": ["自動化", "機電整合", "國際競賽"],
+          "description": "隸屬動力機械系的學生機器人團隊，結合機械設計、電控、視覺辨識與程式開發自製比賽機器人，代表台灣參加法國Eurobot國際機器人大賽並屢獲佳績。",
+          "audience": "對機電整合、自動化、程式與感測器應用有興趣的學生；適合對自動化產線、機器人專案管理有興趣的工工系學生。",
+          "url": "https://www.facebook.com/DIT.robotics/",
+          "ig": "https://www.instagram.com/dit_robotics/"
+        },
+        {
+          "name": "清大區塊鏈研究社（NTHU Blockchain Club）",
+          "tags": ["區塊鏈", "Web3", "程式"],
+          "description": "聚焦區塊鏈學術研究、技術開發與產學連結的社團，開設讀書會與免費課程，並協助社員組隊參加黑客松、媒合Web3工作與實習機會。",
+          "audience": "對Web3、加密貨幣、智能合約、新興金融科技有興趣的學生。",
+          "url": "https://www.instagram.com/nthubc/"
+        },
+        {
+          "name": "清大資訊科學研習社（NTHUTS，即「清大資研」）",
+          "tags": ["程式入門", "資訊技術"],
+          "description": "清大官方認證的資訊科學學術性社團，簡稱「清資社」，開設程式設計、資訊科學相關課程與活動，帶領非本科學生入門資訊技術。",
+          "audience": "對資訊科技、程式開發有興趣、想有系統補程式基礎的學生；適合還沒決定要不要走技術路線、想先接觸看看的人。",
+          "url": "https://www.facebook.com/nthutechsociety/",
+          "ig": "https://www.instagram.com/nthu.tech_society/"
+        },
+        {
+          "name": "陽明交大軟體開發社（NYCU SDC）",
+          "tags": ["軟體開發", "跨校社群", "程式"],
+          "description": "登記於陽明交通大學學生事務處之學術性社團，目標是集結交大與清大的技術人才、加速兩校資訊技術領域發展，並帶領新進成員成長為軟體開發人才。",
+          "audience": "對程式設計、軟體開發、跨校技術交流有興趣的清大／陽明交大學生。",
+          "url": "https://www.facebook.com/NYCUSDC/",
+          "ig": "https://www.instagram.com/nycu_sdc/"
+        }
+      ]
+    },
+    {
+      "id": "programs_competitions",
+      "label": "競賽・實習・計畫",
+      "subtitle": "想累積一個能講故事的經歷",
+      "items": [
+        {
+          "name": "獎金獵人（Bhuntr）",
+          "tags": ["競賽平台", "獎金", "作品集"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 5 },
+          "description": "台灣最大的競賽資訊整合平台，成立於2011年，蒐集設計、創業、行銷、攝影、程式等各類有獎金的競賽與活動資訊，並提供分類瀏覽與篩選功能，可依領域、獎金、截止日快速找到適合的比賽。這類資源統整平台適合當成找比賽的第一站。",
+          "audience": "想累積作品集、獎金與實戰經驗，或不知道去哪找比賽的學生。",
+          "url": "https://bhuntr.com/tw"
+        },
+        {
+          "name": "STP種子人才培訓計畫",
+          "tags": ["職場培訓", "企業參訪", "不限科系"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 3 },
+          "description": "並非政府計畫，而是由台灣董事學會自2013年發起的產學橋接計畫，提供免費職場能力培訓、企業參訪與專案實作。已培育2,200多位學員，獲逾120家上市櫃企業合作。",
+          "audience": "北部各大學在學學生（含清大跨校參與），不限科系背景。",
+          "url": "https://stptaiwan.wixsite.com/website"
+        },
+        {
+          "name": "大專生公部門見習計畫（教育部青年發展署）",
+          "tags": ["公部門", "見習", "政策"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 2 },
+          "description": "俗稱「公部門暑期實習」，由教育部青年發展署協調總統府、五院及所屬中央機關開放大專生見習，每年約4-5月、7-8月分梯次辦理，透過RICH職場體驗網申請。",
+          "audience": "35歲以下、國內公私立大專校院在學學生。",
+          "url": "https://www.yda.gov.tw/plan.aspx?p=2019"
+        },
+        {
+          "name": "新竹X梅竹黑客松（HackMeiChu）",
+          "tags": ["黑客松", "跨域組隊", "MVP"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 5 },
+          "description": "由清大、陽明交大學生社群發起，邀請跨領域學生組隊在限定時間內實作最小可行產品(MVP)。2026年第14屆訂於9月19-20日在清大體育館舉辦。官網每年改版更新。",
+          "audience": "全國大專院校在學學生（不限科系），鼓勵工程、設計、商管跨領域組隊。",
+          "url": "https://2026.meichuhackathon.org/"
+        },
+        {
+          "name": "全國智慧製造應用競賽",
+          "tags": ["智慧製造", "自動化", "AI"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 2 },
+          "description": "由達明機器人培訓中心（TM Academy）與臺中市智慧製造技術教學中心主辦，自2022年起每年舉辦，設有大專組，競賽情境貼近實際產線智慧化與AI創新應用。",
+          "audience": "全國大專校院在學學生，對生產系統、自動化與智慧製造有興趣者。",
+          "url": "https://www.academy.tm-robot.com/en/competition"
+        },
+        {
+          "name": "AI CUP 教育部全國大專校院人工智慧競賽",
+          "tags": ["AI", "競賽", "資料分析"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 4 },
+          "description": "教育部主辦的全國性AI競賽平台，每年設定貼近產業真實情境的資料分析與機器學習題目，透過AIdea共創平台與T-Brain報名。",
+          "audience": "全國大專校院在學學生，不限科系但需具備資料分析／程式基礎。",
+          "url": "https://aicup.tw/"
+        },
+        {
+          "name": "ATCC 全國大專院校商業個案大賽",
+          "tags": ["商業個案", "策略思考", "提案"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 5 },
+          "description": "已舉辦逾20屆、規模最大的全國商業個案競賽，每年邀請國內外知名企業、公部門與NPO提出真實商業議題，訓練策略思考與結構化提案能力。",
+          "audience": "國內外各大學院校大學部或研究所在學學生，3-5人一隊。",
+          "url": "https://atcc.co/"
+        },
+        {
+          "name": "中華採購與供應管理協會（SMIT）CPPS／CPP採購認證",
+          "tags": ["供應鏈", "採購", "證照"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 2 },
+          "description": "台灣歷史最悠久的採購與供應鏈管理專業協會，提供基礎採購檢定、採購供應專業認證及國際認證課程。部分梯次有資格限制，建議先洽詢協會確認在校生報名條件。",
+          "audience": "有志投入採購、供應鏈管理領域的大學生及社會新鮮人。",
+          "url": "https://www.smit.org.tw/"
+        },
+        {
+          "name": "台積電校園徵才暨暑期實習計畫（含DNA Internship）",
+          "tags": ["半導體", "實習", "供應鏈"],
+          "ratings": { "difficulty": 5, "payoff": 5, "popularity": 5 },
+          "description": "台積電官方學生培育計畫入口，涵蓋暑期實習（開放人資、財務、供應鏈管理與風險管理等非純工程職缺）與各校聯合研發中心產學合作機會。",
+          "audience": "大三（含）以上在學學生，碩博生尤佳，不限工程背景。",
+          "url": "https://careers.tsmc.com/zh_TW/education/SearchPrograms"
+        },
+        {
+          "name": "和泰公益夢想家ESG提案實作行動",
+          "tags": ["ESG", "永續", "提案實作"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 2 },
+          "description": "和泰汽車主辦的學生ESG提案競賽，圍繞移動自由、社會共好、人才價值、環境友善四大永續主題，入選團隊可獲最高20萬元實作津貼並由業師輔導6個月。",
+          "audience": "大專院校（含碩博）及高中職在學學生，2-6人一隊。",
+          "url": "https://www.hotaimotor.com.tw/dreamfighter/"
+        }
+      ]
+    },
+    {
+      "id": "career_platforms",
+      "label": "求職平台",
+      "subtitle": "要找實習或正職時再回來查",
+      "items": [
+        {
+          "name": "LinkedIn Jobs",
+          "tags": ["求職", "人脈", "外商"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 5 },
+          "description": "外商儲備幹部(MA)、顧問業Associate等職缺常見的求職與人脈平台，用「Industrial Engineering」「Supply Chain」等關鍵字篩選台灣職缺，也能看到內部校友或人脈可協助內推。",
+          "audience": "有意投外商儲備幹部(MA)、顧問業Associate，或想拓展國際人脈與東南亞外派機會的學生。",
+          "url": "https://www.linkedin.com/jobs/"
+        },
+        {
+          "name": "CakeResume（現整合為Cake）",
+          "tags": ["履歷", "作品集"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 4 },
+          "description": "台灣起家的線上履歷平台，官方網域已整併為cake.me，提供區塊式履歷編輯器、線上作品集頁面與台灣在地職缺搜尋，合作企業涵蓋台積電等半導體大廠。",
+          "audience": "需要快速做出視覺化履歷或線上作品集頁面的應屆畢業生，尤其投遞新創、電商、外商的學生。",
+          "url": "https://www.cake.me/"
+        },
+        {
+          "name": "104人力銀行",
+          "tags": ["求職", "台灣職缺"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 5 },
+          "description": "台灣最大的綜合型人力銀行，職缺量與薪資揭露率高，可利用「薪資情報」與公司頁面功能，交叉比對不同公司同職類的起薪落點與福利。",
+          "audience": "求職初期想大量瀏覽台灣本地職缺、比較同職類公司待遇的學生。",
+          "url": "https://www.104.com.tw/"
+        },
+        {
+          "name": "Glassdoor",
+          "tags": ["薪資查詢", "公司評價"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 3 },
+          "description": "國際型的公司評價與薪資查詢平台，可搜尋Taiwan地區特定職稱的薪資範圍與員工對公司文化的匿名評論（無獨立台灣站，以城市/國家篩選）。",
+          "audience": "準備和外商或半導體大廠面談薪資、想看員工真實評價的學生。",
+          "url": "https://www.glassdoor.com/Salaries/index.htm"
+        },
+        {
+          "name": "Levels.fyi",
+          "tags": ["薪資查詢", "半導體"],
+          "ratings": { "difficulty": 1, "payoff": 4, "popularity": 3 },
+          "description": "蒐集科技與半導體業員工自主回報的薪酬數據，並依公司職級拆解本薪、股票、獎金，可依職級精確比對市場行情，避免用籠統的「年薪」數字誤判待遇。",
+          "audience": "拿到半導體業或科技業offer、需要依職級細拆薪資結構做比較的學生。",
+          "url": "https://www.levels.fyi/"
+        },
+        {
+          "name": "1111人力銀行",
+          "tags": ["求職"],
+          "ratings": { "difficulty": 1, "payoff": 2, "popularity": 3 },
+          "description": "台灣主要人力銀行之一，職缺涵蓋製造業、供應鏈與行政幕僚類別，可作為104之外的第二個職缺來源，交叉核對待遇條件是否一致。",
+          "audience": "想擴大職缺蒐尋範圍、交叉核對104資訊的求職學生。",
+          "url": "https://www.1111.com.tw/"
+        },
+        {
+          "name": "Yourator",
+          "tags": ["新創", "顧問業", "求職"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 2 },
+          "description": "專注新創、數位與顧問業的人才媒合平台，職缺集中在軟體科技、金融科技、顧問與新創公司，可找到104、LinkedIn上較少露出的職缺。",
+          "audience": "想進新創公司或中小型顧問業、104/LinkedIn職缺覆蓋不到的學生。",
+          "url": "https://www.yourator.co/"
+        },
+        {
+          "name": "國立清華大學職涯發展組",
+          "tags": ["履歷健診", "校園徵才"],
+          "ratings": { "difficulty": 1, "payoff": 4, "popularity": 2 },
+          "description": "隸屬學務處，提供一對一職涯諮詢、企業參訪、校園徵才、實習媒合與職缺搜尋系統等服務。可預約免費履歷健診、參加校園徵才場次接觸半導體大廠與顧問公司。",
+          "audience": "在校清大工工系學生，尤其想預約免費履歷/面試諮詢者。",
+          "url": "https://ccd.nthu.edu.tw/"
+        },
+        {
+          "name": "GitHub Profile README（個人主頁作品集）",
+          "tags": ["作品集", "GitHub"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 3 },
+          "description": "建立一個與帳號同名的public repository並寫README.md，內容會顯示在個人主頁最上方，等於一份「可執行的履歷」，用來整理Python分析、OR排程模型等專案。",
+          "audience": "想用GitHub展示Python/OR/資料分析專案、但沒有資工科班履歷網站經驗的學生。",
+          "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme"
+        },
+        {
+          "name": "GitHub Pages Quickstart（免費履歷網站教學）",
+          "tags": ["作品集", "免費架站"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 2 },
+          "description": "官方入門教學，教你如何用一個repository免費架設並發布靜態網站，把課堂專題做成一頁式網頁報告，比純PDF更容易在履歷上展示。",
+          "audience": "想免費架設個人履歷/作品集網站、不想從零學後端架站的學生。",
+          "url": "https://docs.github.com/en/pages/quickstart"
+        },
+        {
+          "name": "LinkedIn個人頁面優化6技巧（Yourator專欄）",
+          "tags": ["LinkedIn", "求職技巧"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 2 },
+          "description": "從人資角度整理出6個優化LinkedIn頁面的技巧，包含把檔案填到完整度、累積聯絡人、追蹤目標企業、開啟「開放看新工作」設定等。",
+          "audience": "已建立LinkedIn帳號但想提高被獵頭/HR搜尋到機率的求職學生。",
+          "url": "https://www.yourator.co/articles/214"
+        }
+      ]
+    },
+    {
+      "id": "data_science_learning",
+      "label": "AI・寫程式",
+      "subtitle": "不用資工背景，這些是給新手的起點",
+      "items": [
+        {
+          "name": "GitHub 入門：Hello World",
+          "group": "寫程式基礎",
+          "tags": ["版本控制", "協作", "作品集"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 5 },
+          "description": "GitHub是工程師與資料科學家放程式碼、跟別人協作、累積作品集的地方，核心是Git版本控制——記錄每次修改、方便多人同時改同一份程式不衝突。GitHub官方「Hello World」教學不用會寫程式、不用裝軟體，只要有帳號就能照著做完一輪repository、branch、commit、pull request的基本流程。",
+          "audience": "完全沒用過GitHub、想知道別人常說的「放到GitHub上」到底是在幹嘛的新手。",
+          "url": "https://docs.github.com/en/get-started/quickstart/hello-world"
+        },
+        {
+          "name": "清華磨課師 NTHU MOOCs",
+          "group": "寫程式基礎",
+          "tags": ["Python", "中文課程", "免費"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 2 },
+          "description": "清華大學官方線上課程平台，開設「Python語言程式入門」「資料探勘與應用」「人工智慧導論」等中文授課課程，由本校師資教學。",
+          "audience": "希望以中文、校內熟悉教學方式從零開始學程式與資料科學基礎的學生。",
+          "url": "https://mooc.nthu.edu.tw/"
+        },
+        {
+          "name": "Coursera：Python for Everybody",
+          "group": "寫程式基礎",
+          "tags": ["Python", "零基礎"],
+          "ratings": { "difficulty": 1, "payoff": 4, "popularity": 4 },
+          "description": "密西根大學開設的入門程式設計專項課程，專為完全零基礎的學習者設計，從變數、迴圈教到網頁資料擷取與資料庫，是全球最多人使用的Python入門教材之一。",
+          "audience": "沒有寫過程式、需要從Python語法基礎打底的新手。",
+          "url": "https://www.coursera.org/specializations/python"
+        },
+        {
+          "name": "DataCamp",
+          "group": "寫程式基礎",
+          "tags": ["Python", "互動學習"],
+          "ratings": { "difficulty": 1, "payoff": 4, "popularity": 3 },
+          "description": "以「邊做邊學」聞名的互動式資料科學學習平台，直接在瀏覽器分段練習Python、R、SQL程式碼並即時得到回饋，特別適合完全沒寫過程式的初學者建立信心。",
+          "audience": "偏好互動式小步驟練習而非長篇影片教學、想系統化補齊資料科學技能樹的學生。",
+          "url": "https://www.datacamp.com/"
+        },
+        {
+          "name": "freeCodeCamp",
+          "group": "寫程式基礎",
+          "tags": ["Python", "免費", "證書"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 3 },
+          "description": "完全免費且開源的程式學習平台，提供內含數千小時教材的資料分析（Python）、機器學習等認證路徑，做完專案就能拿到證書。",
+          "audience": "想長期、免費、有系統地練習寫程式與資料分析專題的學生。",
+          "url": "https://www.freecodecamp.org/"
+        },
+        {
+          "name": "edX",
+          "group": "寫程式基礎",
+          "tags": ["程式", "大學課程"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 2 },
+          "description": "由哈佛、MIT共同創辦的線上課程平台，收錄如MIT「Introduction to Computer Science and Programming Using Python」等扎實的程式與資料科學課程，旁聽完全免費。",
+          "audience": "想以頂尖大學課程等級補強程式設計與資料科學理論基礎的學生。",
+          "url": "https://www.edx.org/"
+        },
+        {
+          "name": "Hahow好學校：Python資料分析",
+          "group": "寫程式基礎",
+          "tags": ["Python", "中文", "爬蟲"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 3 },
+          "description": "台灣本土線上課程平台，「Python資料分析－網頁爬蟲與視覺呈現」等課程以中文講解、貼近台灣職場情境與案例。",
+          "audience": "希望用中文學習、且想練習網路爬蟲與資料視覺化等應用技能的學生。",
+          "url": "https://hahow.in/courses/5d9c405e6f4b130023e9999d"
+        },
+        {
+          "name": "Python官方教學文件",
+          "group": "寫程式基礎",
+          "tags": ["Python", "官方文件"],
+          "ratings": { "difficulty": 3, "payoff": 3, "popularity": 2 },
+          "description": "Python語言的官方文件與教學，內容準確且隨版本更新，是查證任何語法疑問最權威的第一手資料來源。學到一半卡關時養成回頭查文件的習慣是關鍵一步。",
+          "audience": "已有基礎Python概念、想養成查閱原始文件習慣以獨立解決問題的學生。",
+          "url": "https://docs.python.org/3/tutorial/index.html"
+        },
+        {
+          "name": "LeetCode",
+          "group": "寫程式基礎",
+          "tags": ["演算法", "面試"],
+          "ratings": { "difficulty": 4, "payoff": 4, "popularity": 5 },
+          "description": "全球最多人使用的程式邏輯與演算法練習平台，題目依資料結構、演算法分類。除了學資料分析工具，也需要練習「把問題拆解成程式邏輯」的思考方式。",
+          "audience": "已具備Python基礎語法、想加強程式邏輯與演算法思維、準備面試技術職的學生。",
+          "url": "https://leetcode.com/"
+        },
+        {
+          "name": "Kaggle",
+          "group": "AI・機器學習",
+          "tags": ["AI", "機器學習", "競賽"],
+          "ratings": { "difficulty": 3, "payoff": 5, "popularity": 5 },
+          "description": "全球最大的資料科學競賽與資料集平台，內建免費雲端Notebook（含GPU），可直接在瀏覽器寫Python分析真實資料，不需自架環境。",
+          "audience": "已具備基礎Python語法、想透過實戰競賽與真實資料集練習資料分析與機器學習的學生。",
+          "url": "https://www.kaggle.com/"
+        },
+        {
+          "name": "Hugging Face",
+          "group": "AI・機器學習",
+          "tags": ["AI", "生成式AI", "NLP"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 5 },
+          "description": "開源機器學習社群平台，提供大量預訓練模型、資料集與線上課程，可免費呼叫現成AI模型完成文字、影像等任務，不必先搞懂深度學習底層數學。",
+          "audience": "想了解或應用現成AI／機器學習模型、探索生成式AI與NLP應用的學生。",
+          "url": "https://huggingface.co/"
+        },
+        {
+          "name": "台灣資料科學協會",
+          "group": "AI・機器學習",
+          "tags": ["社群", "導師媒合"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 2 },
+          "description": "台灣最大的資料科學社群，定期舉辦免費「版聚」分享業界實戰經驗，並提供「領航計畫」等免費三個月一對一導師媒合，協助釐清資料科學職涯方向。",
+          "audience": "想認識資料科學業界人士、了解實際職場所需技能與職涯路徑的學生。",
+          "url": "https://www.datascienceassoc.org/"
+        },
+        {
+          "name": "Google Data Analytics 專業證照（Coursera）",
+          "group": "官方認證與課程",
+          "tags": ["資料分析", "證照", "SQL"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 4 },
+          "description": "Google親自設計的資料分析職能證照課程，教授試算表、SQL、Python、Tableau等業界常用工具。免費旁聽即可看完整課程內容，僅認證需付費。",
+          "audience": "想銜接產業對資料分析職能的要求、規劃考取國際認可證照的學生。",
+          "url": "https://www.coursera.org/professional-certificates/google-data-analytics"
+        },
+        {
+          "name": "Google AI Essentials（Coursera）",
+          "group": "官方認證與課程",
+          "tags": ["AI", "生成式AI", "證照"],
+          "ratings": { "difficulty": 1, "payoff": 3, "popularity": 4 },
+          "description": "Google在Coursera推出的AI/生成式AI入門課程，教授如何撰寫有效提示詞、負責任使用AI及提升工作生產力，完課可取得Google官方證書，訂閱前有7天免費試用。",
+          "audience": "沒有AI基礎、想快速掌握生成式AI工具應用於工作與課業的初學者。",
+          "url": "https://www.coursera.org/learn/google-ai-essentials"
+        },
+        {
+          "name": "NVIDIA Deep Learning Institute（DLI）",
+          "group": "官方認證與課程",
+          "tags": ["AI", "深度學習", "GPU"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 3 },
+          "description": "NVIDIA官方的深度學習與AI教育平台，提供自學課程、講師帶領工作坊及雲端GPU實作環境。多數熱門自學課程可免費上，完成特定課程可付費取得NVIDIA官方能力證書。",
+          "audience": "對深度學習、生成式AI/LLM、加速運算有興趣，想累積GPU實作經驗與官方證書的學生。",
+          "url": "https://www.nvidia.com/en-us/training/"
+        },
+        {
+          "name": "Anthropic Claude Academy",
+          "group": "官方認證與課程",
+          "tags": ["AI", "Prompt Engineering", "Agent"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 4 },
+          "description": "Anthropic官方於2026年推出的免費學習平台，涵蓋Claude.ai、Claude Code、Claude API、MCP與提示工程(prompt engineering)等主題課程，全站免費且免登入即可瀏覽，完成課程可獲得徽章。",
+          "audience": "想學習使用Claude API開發應用、撰寫提示工程或建構AI代理系統的學生。",
+          "url": "https://academy.claude.com/"
+        }
+      ]
+    },
+    {
+      "id": "or_simulation_tools",
+      "label": "工程工具箱",
+      "subtitle": "排程、模擬、繪圖——業界真的在用的軟體",
+      "items": [
+        {
+          "name": "Gurobi Optimizer（學術授權）",
+          "group": "最佳化與排程",
+          "tags": ["最佳化", "排程", "Python"],
+          "ratings": { "difficulty": 3, "payoff": 5, "popularity": 3 },
+          "description": "業界公認最快的商用數學規劃求解器，支援線性規劃、混合整數規劃(MILP)等，是金融、物流、供應鏈公司做排程與資源分配決策時的標準工具。用學校信箱註冊即可免費申請完整版。",
+          "audience": "想學習/實作線性規劃與混合整數規劃、準備用最佳化技能做專題競賽或求職的學生。",
+          "url": "https://www.gurobi.com/academics/"
+        },
+        {
+          "name": "PuLP",
+          "group": "最佳化與排程",
+          "tags": ["Python", "線性規劃"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 3 },
+          "description": "Python的開源線性規劃/混合整數規劃建模套件，可用簡潔的Python語法定義目標式與限制式。完全免費、pip install pulp即可安裝，是進階到「用程式做線性規劃」最常見的第一步。",
+          "audience": "剛開始學線性規劃、想用Python而非Excel求解器寫作業與專題的初學者。",
+          "url": "https://pypi.org/project/PuLP/"
+        },
+        {
+          "name": "Google OR-Tools",
+          "group": "最佳化與排程",
+          "tags": ["最佳化", "路徑規劃", "排程"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 3 },
+          "description": "Google開源釋出的組合最佳化工具箱，內建車輛路徑規劃(VRP)、排程、裝箱、線性/整數規劃等多種求解器，官方文件附大量可直接執行的範例。",
+          "audience": "想免費學習排程、路徑規劃、裝箱等組合最佳化問題實作的學生。",
+          "url": "https://developers.google.com/optimization"
+        },
+        {
+          "name": "LINGO",
+          "group": "最佳化與排程",
+          "tags": ["線性規劃", "作業研究"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 2 },
+          "description": "LINDO Systems開發的數學規劃建模軟體，用接近數學式的LINGO語言直接寫出線性、非線性、整數規劃模型並求解，是不少作業研究教科書範例採用的軟體。",
+          "audience": "修習作業研究課程、需要用教科書慣用的LP/IP建模語言驗算作業的學生。",
+          "url": "https://www.lindo.com/index.php/2-uncategorised/237-freetrial"
+        },
+        {
+          "name": "IBM ILOG CPLEX Optimization Studio",
+          "group": "最佳化與排程",
+          "tags": ["最佳化", "求解器"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 2 },
+          "description": "IBM旗下的商用數學規劃求解器，是與Gurobi齊名的業界標準線性規劃/混合整數規劃引擎，也能透過docplex套件用Python呼叫。學生可透過IBM Academic Initiative免費取得完整版。",
+          "audience": "想比較不同商用求解器、或實驗室慣用CPLEX的學生。",
+          "url": "https://ibm.biz/CPLEXonAI"
+        },
+        {
+          "name": "作業研究(2)：最佳化演算法（Coursera, 台大）",
+          "group": "最佳化與排程",
+          "tags": ["作業研究", "Python", "Gurobi"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 3 },
+          "description": "台灣大學孔令傑教授開設的Coursera課程，講解Simplex法、Branch-and-Bound、梯度下降等最佳化演算法背後的數學原理，並實作用Python呼叫Gurobi求解器。免費旁聽，評分4.9/5。",
+          "audience": "想搞懂最佳化演算法數學原理、並學會用Python串接Gurobi求解器的學生。",
+          "url": "https://www.coursera.org/learn/operations-research-algorithms"
+        },
+        {
+          "name": "AnyLogic（PLE 個人學習版）",
+          "group": "模擬與數位孿生",
+          "tags": ["模擬", "數位孿生"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 3 },
+          "description": "少數同時支援離散事件模擬、系統動力學、代理人基模擬三種方法的模擬軟體，廣泛用於供應鏈、製造、醫療系統的數位孿生建模。官方提供完全免費的Personal Learning Edition。",
+          "audience": "想入門離散事件模擬/系統動力學/代理人基模擬、做數位孿生專題的學生。",
+          "url": "https://www.anylogic.com/resources/anylogic-for-academia/"
+        },
+        {
+          "name": "FlexSim（學生版）",
+          "group": "模擬與數位孿生",
+          "tags": ["模擬", "3D視覺化"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 3 },
+          "description": "3D視覺化的離散事件模擬軟體，把工廠產線、物流中心等系統做成互動式3D動畫模型以驗證產能與找瓶頸。可到官網申請免費學生版或14天完整功能試用版。",
+          "audience": "想做工廠/物流系統3D視覺化模擬專題的學生。",
+          "url": "https://www.flexsim.com/academia/"
+        },
+        {
+          "name": "Siemens Tecnomatix Plant Simulation（學生版）",
+          "group": "模擬與數位孿生",
+          "tags": ["模擬", "產能規劃"],
+          "ratings": { "difficulty": 3, "payoff": 3, "popularity": 2 },
+          "description": "西門子旗下的3D物流建模與離散事件模擬工具，是製造業做產能規劃、產線佈局與物料流分析時常用的業界軟體。官網可免費下載學生版（單一模擬最多80個物件）。",
+          "audience": "想接觸業界常用數位孿生/物流模擬軟體、了解製造業產能規劃流程的學生。",
+          "url": "https://resources.sw.siemens.com/en-US/download-tecnomatix-plant-simulation-student-software/"
+        },
+        {
+          "name": "SimPy",
+          "group": "模擬與數位孿生",
+          "tags": ["Python", "模擬"],
+          "ratings": { "difficulty": 3, "payoff": 3, "popularity": 2 },
+          "description": "純Python寫成的開源離散事件模擬框架，用generator函式描述製程、顧客、車輛等「活動個體」。完全免費、程式碼透明，能直接跟pandas、numpy整合。",
+          "audience": "想用Python自己寫離散事件模擬、不想依賴商用授權軟體的學生。",
+          "url": "https://simpy.readthedocs.io/"
+        },
+        {
+          "name": "NVIDIA Omniverse",
+          "group": "模擬與數位孿生",
+          "tags": ["數位孿生", "3D協作", "智慧工廠"],
+          "ratings": { "difficulty": 4, "payoff": 4, "popularity": 4 },
+          "description": "NVIDIA用於即時3D協作與數位孿生(Digital Twin)模擬的開發平台，可整合機器人、感測器與物理模擬，常用於智慧工廠與產線規劃的虛擬驗證。2026年5月起開發、量產與軟體轉散布使用權全面免費開放，不再要求AI Enterprise訂閱。",
+          "audience": "對智慧工廠、數位孿生、產線模擬有興趣，想做虛擬產線驗證專題的學生。",
+          "url": "https://www.nvidia.com/en-us/omniverse/"
+        },
+        {
+          "name": "AutoCAD",
+          "group": "工程繪圖與建模",
+          "tags": ["CAD", "工廠佈置"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 3 },
+          "description": "Autodesk推出的電腦輔助設計(CAD)軟體業界標準之一，廣泛用於工廠佈置圖、產線平面圖與機構製圖繪製。用學校信箱申請並提供在學證明，可免費取得功能完整的一年期教育授權（可續）。",
+          "audience": "需要繪製工廠佈置圖、機構圖，或修習生產線規劃、設施規劃相關課程/專題的學生。",
+          "url": "https://www.autodesk.com/education/edu-software/overview"
+        },
+        {
+          "name": "SolidWorks",
+          "group": "工程繪圖與建模",
+          "tags": ["3D建模", "產品設計"],
+          "ratings": { "difficulty": 3, "payoff": 3, "popularity": 3 },
+          "description": "Dassault Systèmes旗下主流3D機械設計/產品建模軟體，常用於零件與組件的3D建模、工程圖與運動模擬。「SOLIDWORKS Design Standard for Students」個人版可直接在官網申請，取得一年份免費授權（含教育浮水印、限非商業用途）。",
+          "audience": "需要進行3D產品建模、治具或設備設計，或參與跨系專題合作的學生。",
+          "url": "https://www.solidworks.com/product/students"
+        },
+        {
+          "name": "Six Sigma Yellow Belt Specialization（Coursera）",
+          "group": "製程改善認證",
+          "tags": ["六標準差", "品質管理", "證照"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 3 },
+          "description": "由美國喬治亞大學系統於Coursera開設的六標準差線上認證課程，可免費旁聽，涵蓋精實六標準差核心工具與品質管理方法，是自學實用製程改善技能與累積證書的入門選擇。",
+          "audience": "對品質管理、製程改善、六標準差方法有興趣的大學生至碩班學生。",
+          "url": "https://www.coursera.org/specializations/six-sigma-fundamentals"
+        }
+      ]
+    },
+    {
+      "id": "academic_programs",
+      "label": "學分學程・雙主修",
+      "subtitle": "系上以外，另一條正式的跨域路徑",
+      "items": [
+        {
+          "name": "清大學分學程總覽（全校學程列表）",
+          "tags": ["制度比較", "選課規劃"],
+          "description": "清華大學課務組整理的全校學分學程總表，橫跨創新創意、AI、現代科技、人文社會、計財商管、永續發展、生物應用等領域，共40餘個學程。下面只挑了幾個跟工工系比較相關的，想看全部選項可以來這裡逛。",
+          "audience": "還沒決定要往哪個方向跨域、想先看過所有選項再決定的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/404-1208-11644.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學雙主修／輔系申請辦法",
+          "tags": ["雙主修", "輔系", "正式學籍"],
+          "description": "教務處註冊組公告的雙主修（依《國立清華大學學生修讀雙主修辦法》）與輔系（依《國立清華大學學生修讀輔系辦法》）申請規定，第二學年起至第四學年下學期加退選截止前皆可提出申請。是取得資工、電機等系正式跨領域學籍認證的制度化管道。",
+          "audience": "希望取得資工/電機等系正式雙主修或輔系學籍認證、想深度累積第二專長的學生。",
+          "url": "https://registra.site.nthu.edu.tw/p/404-1211-5133.php"
+        },
+        {
+          "name": "清華大學智慧製造學分學程",
+          "tags": ["智慧製造", "工業4.0"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 2 },
+          "description": "教務處課務組開設的跨院學分學程，課程涵蓋智慧製造相關的工程與資訊整合知識。不需轉系或雙主修，選修規劃課程即可取得證書，直接對應工工系「智慧製造」跨域需求。",
+          "audience": "希望強化智慧製造/工業4.0跨域能力、但不想額外雙主修的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-171443,r5710.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學數據科學學分學程",
+          "tags": ["資料科學", "統計"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 3 },
+          "description": "教務處課務組開設的全校性跨領域學分學程，課程涵蓋數據分析與統計方法，許多學程課程與工工系上選修重疊，可一課抵兩用，是累積數據分析能力的高性價比路徑。",
+          "audience": "希望強化數據分析/統計能力、想拿到正式學程證書的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-104542,r5710.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學人工智慧與應用基礎學分學程",
+          "tags": ["AI", "非資工背景", "19學分"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 4 },
+          "description": "教務處課務組開設、專為非資工背景學生設計的AI學分學程（19學分），涵蓋程式設計、機器學習等核心課程，可系統化補齊AI基礎知識，銜接智慧製造與數據分析等應用場景。另有進階版（21學分）可選。",
+          "audience": "無資工背景、想系統化補齊AI基礎知識的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-149691,r8888.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學創新創業學分學程",
+          "tags": ["創業", "商業"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 3 },
+          "description": "教務處課務組開設的跨院學分學程，教授創業所需的商業模式設計、募資、團隊經營等實務知識，可與「清華大學創業車庫」搭配，一個練理論、一個練實作。",
+          "audience": "有意創業、或想理解商業模式與新創營運邏輯的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-71486,r4808.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學生物科技管理學分學程",
+          "tags": ["生技", "管理"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 1 },
+          "description": "教務處課務組開設的跨領域學程，結合生物科技知識與經營管理課程，訓練學生理解生技產業的營運邏輯。對工工系而言是把「製程/供應鏈管理」延伸到生技製藥產業的少見組合，市場能見度不高但稀缺性也高。",
+          "audience": "對生技/製藥產業的生產管理、供應鏈有興趣的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-10856,r1209.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學金融科技與區塊鏈學分學程",
+          "tags": ["金融科技", "區塊鏈", "商業"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 3 },
+          "description": "教務處課務組開設的跨領域學程，結合金融理論與區塊鏈、程式技術，訓練學生理解Fintech產業的運作邏輯與技術實作。可與校內的區塊鏈研究社互相搭配。",
+          "audience": "對金融科技、區塊鏈應用、新興金融商業模式有興趣的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-130076,r1213.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學永續城鄉與ESG實踐學分學程",
+          "tags": ["永續", "ESG", "城鄉"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 2 },
+          "description": "教務處開設的永續發展跨領域學程，涵蓋城鄉規劃、ESG實踐與永續治理，對應未來十年供應鏈減碳、CBAM因應等趨勢下企業對永續人才的需求。",
+          "audience": "關心永續發展、ESG，未來想進入企業永續部門或顧問業的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/450-1208-157526,c0.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學地緣政治與企業經營全英語學分學程",
+          "tags": ["地緣政治", "供應鏈", "全英語"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 2 },
+          "description": "教務處開設的全英語授課學程，探討地緣政治如何形塑企業經營與全球供應鏈布局，直接對應「C+1供應鏈再平衡」下工工系需要的跨國協同與政策合規知識，全英語授課同時練英文簡報與寫作。",
+          "audience": "對國際供應鏈布局、貿易政策、全球化企業經營有興趣，想同時練英語授課環境的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-268587,r7836.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學創新設計學分學程",
+          "tags": ["產品設計", "創新"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 3 },
+          "description": "教務處課務組開設的跨領域學程，訓練產品與服務的創新設計方法，從使用者研究到原型製作。工工系學生若對產品開發流程有興趣，能補齊「設計端」的視角，跟系上的製程/品質視角互補。",
+          "audience": "對產品設計、使用者研究、新產品開發流程有興趣的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-64263,r4808.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學醫學科技學分學程",
+          "tags": ["醫療", "生技", "高齡社會"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 2 },
+          "description": "教務處課務組開設的跨領域學程，涵蓋醫學工程與醫療科技基礎知識。高齡化社會下的醫療作業流程設計與醫材製造，是亞太地區被視為剛性需求的新興領域，工業工程的流程優化能力正好能派上用場。",
+          "audience": "對醫療設備製造、醫院流程優化、高齡照護系統設計有興趣的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-178628,r8780.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學金融數學學分學程",
+          "tags": ["金融", "數學", "商業"],
+          "ratings": { "difficulty": 4, "payoff": 3, "popularity": 2 },
+          "description": "教務處課務組開設的跨領域學程，訓練財務工程、風險模型等量化金融能力。對工科背景的學生來說門檻不算低，但金融業對「懂數學、會寫程式」的人才需求穩定，是把最佳化/統計底子轉向金融業的一條路。",
+          "audience": "數理能力較強、對量化金融、風險管理有興趣的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-104532,r1213.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學法律學分學程",
+          "tags": ["法律", "合規"],
+          "ratings": { "difficulty": 3, "payoff": 3, "popularity": 2 },
+          "description": "教務處課務組開設的跨領域學程，教授基礎法律知識與案例分析。隨著原產地證明、CBAM碳稅等政策合規逐漸成為IE的新業務範疇，具備基礎法律素養在供應鏈、採購相關職位上是加分項。",
+          "audience": "對智慧財產權、貿易合規、供應鏈相關法律議題有興趣的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-10537,r1211.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學奈米與光電半導體產業學分學程",
+          "tags": ["半導體", "奈米科技"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 3 },
+          "description": "教務處課務組開設的跨領域學程，補充半導體與光電產業所需的奈米科技基礎知識。對照六種第一份工作切入點中「半導體IM工程師」「設備/製程工程師」的路徑，這是能加深製程知識的技術補強。",
+          "audience": "未來想走半導體IM工程師、設備/製程工程師路線，想加深製程技術背景的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-9761,r1214.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學生物資訊與生物人工智慧學分學程",
+          "tags": ["生物資訊", "AI", "生技"],
+          "ratings": { "difficulty": 4, "payoff": 3, "popularity": 2 },
+          "description": "教務處課務組開設的跨領域學程，訓練用程式與AI模型處理生物醫學資料的能力。門檻較高（需要生醫背景知識+程式能力），適合已經確定要把「IE×AI」延伸到生醫產業的學生深耕。",
+          "audience": "已具備一定程式基礎、想把AI技能延伸到生醫/製藥產業的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-11171,r1209.php?Lang=zh-tw"
+        },
+        {
+          "name": "清華大學能源科技與永續社會學分學程",
+          "tags": ["能源", "永續"],
+          "ratings": { "difficulty": 3, "payoff": 3, "popularity": 2 },
+          "description": "教務處課務組開設的跨領域學程，涵蓋能源系統、綠電與永續社會相關課程。對應製造業「綠電PPA與排程整合」的新興需求，是永續趨勢下另一個切入角度。",
+          "audience": "對能源系統、綠電、永續基礎設施規劃有興趣的學生。",
+          "url": "https://curricul.site.nthu.edu.tw/p/406-1208-8255,r1215.php?Lang=zh-tw"
+        }
+      ]
+    },
+    {
+      "id": "soft_skills",
+      "label": "軟實力・職涯",
+      "subtitle": "履歷會分高下的，往往是這些",
+      "items": [
+        {
+          "name": "Tableau Public",
+          "tags": ["資料視覺化", "作品集"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 4 },
+          "description": "Tableau官方推出的免費資料視覺化平台，不需寫程式即可用拖拉方式建立互動式圖表。全球最大的視覺化作品分享社群，可下載他人作品觀摩製圖邏輯。",
+          "audience": "想累積資料視覺化作品集、準備實習或求職簡報的學生。",
+          "url": "https://www.tableau.com/products/public"
+        },
+        {
+          "name": "Microsoft Power BI Learn 官方學習路徑",
+          "tags": ["資料視覺化", "證照"],
+          "ratings": { "difficulty": 2, "payoff": 4, "popularity": 4 },
+          "description": "微軟官方免費線上學習平台，提供從資料連接、清理、建模到視覺化報表設計的完整Power BI學習路徑，並可銜接PL-300國際證照模擬測驗。",
+          "audience": "想考取Power BI證照或補強資料分析工具實作能力的學生。",
+          "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi"
+        },
+        {
+          "name": "Storytelling with Data",
+          "tags": ["簡報", "資料敘事"],
+          "ratings": { "difficulty": 2, "payoff": 3, "popularity": 2 },
+          "description": "由暢銷書作者Cole Nussbaumer Knaflic創辦的資料敘事教學平台，教導如何把圖表轉化為能推動決策的故事。同名書籍是全球百餘所大學採用的教科書。",
+          "audience": "想提升簡報中的資料敘事能力、加強跨部門溝通表達的學生。",
+          "url": "https://www.storytellingwithdata.com/"
+        },
+        {
+          "name": "TOEIC臺灣區官方網站",
+          "tags": ["英文", "證照"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 4 },
+          "description": "ETS台灣官方總代理忠欣股份有限公司經營的多益測驗官網，提供聽力與閱讀、口說與寫作等測驗的報名、成績查詢與備考資源。",
+          "audience": "準備考取多益證明英語能力、規劃海外實習或留學的學生。",
+          "url": "https://www.toeic.com.tw/"
+        },
+        {
+          "name": "國際演講會第67地區（Toastmasters Taiwan）",
+          "tags": ["英文", "簡報", "領導力"],
+          "ratings": { "difficulty": 3, "payoff": 4, "popularity": 2 },
+          "description": "國際演講會在台灣的官方分部，透過全台173個分會的例會與Pathways學習路徑，提供公開演講與領導力的實作訓練場域。",
+          "audience": "想長期精進口語表達、簡報與領導溝通能力的學生。",
+          "url": "https://www.toastmasters.org.tw/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('ieem-data').textContent);
+  var catMap = {};
+  data.categories.forEach(function (c) { catMap[c.id] = c; });
+
+  var state = {
+    group: data.groups[0].id,
+    category: data.groups[0].categories[0]
+  };
+
+  var groupToggleEl = document.getElementById('groupToggle');
+  var subtabsEl = document.getElementById('subtabs');
+  var catHeadingEl = document.getElementById('catHeading');
+  var gridEl = document.getElementById('grid');
+
+  function renderGroupToggle() {
+    groupToggleEl.innerHTML = '';
+    data.groups.forEach(function (g) {
+      var btn = document.createElement('button');
+      btn.className = 'group-btn' + (g.id === state.group ? ' active' : '');
+      btn.type = 'button';
+      btn.textContent = g.label;
+      btn.addEventListener('click', function () {
+        state.group = g.id;
+        state.category = g.categories[0];
+        renderAll();
+      });
+      groupToggleEl.appendChild(btn);
+    });
+  }
+
+  function renderSubtabs() {
+    subtabsEl.innerHTML = '';
+    var activeGroup = data.groups.find(function (g) { return g.id === state.group; });
+    activeGroup.categories.forEach(function (catId) {
+      var cat = catMap[catId];
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'subtab' + (catId === state.category ? ' active' : '');
+      btn.innerHTML =
+        '<span class="st-top"><span class="st-label">' + escapeHtml(cat.label) +
+        '</span><span class="st-count">' + cat.items.length + '</span></span>' +
+        '<span class="st-sub">' + escapeHtml(cat.subtitle) + '</span>';
+      btn.addEventListener('click', function () {
+        state.category = catId;
+        renderAll();
+      });
+      subtabsEl.appendChild(btn);
+    });
+  }
+
+  function renderHeading() {
+    var cat = catMap[state.category];
+    catHeadingEl.innerHTML =
+      '<h2>' + escapeHtml(cat.label) + '</h2><span class="cat-sub">' + escapeHtml(cat.subtitle) + '</span>';
+  }
+
+  function stars(n) {
+    n = Math.max(0, Math.min(5, n || 0));
+    return '★'.repeat(n) + '☆'.repeat(5 - n);
+  }
+
+  function ratingsHtml(r) {
+    if (!r) return '';
+    return '<div class="ratings">' +
+      '<span class="r-item"><span class="r-label">難度</span><span class="r-stars">' + stars(r.difficulty) + '</span></span>' +
+      '<span class="r-item"><span class="r-label">收穫</span><span class="r-stars">' + stars(r.payoff) + '</span></span>' +
+      '<span class="r-item"><span class="r-label">熱門</span><span class="r-stars">' + stars(r.popularity) + '</span></span>' +
+      '</div>';
+  }
+
+  function renderGrid() {
+    var cat = catMap[state.category];
+    gridEl.innerHTML = '';
+    var lastGroup = null;
+    var firstHeading = true;
+    cat.items.forEach(function (item) {
+      if (item.group && item.group !== lastGroup) {
+        var heading = document.createElement('div');
+        heading.className = 'subgroup-heading' + (firstHeading ? ' first' : '');
+        heading.textContent = item.group;
+        gridEl.appendChild(heading);
+        lastGroup = item.group;
+        firstHeading = false;
+      }
+
+      var card = document.createElement('article');
+      card.className = 'card';
+
+      var tagsHtml = item.tags.map(function (t) {
+        return '<span class="tag">#' + escapeHtml(t) + '</span>';
+      }).join('');
+
+      var linksHtml = item.url
+        ? '<a class="card-link" href="' + escapeAttr(item.url) + '" target="_blank" rel="noopener">前往 →</a>'
+        : '<span class="card-link unavailable">未找到官方連結</span>';
+      if (item.ig) {
+        linksHtml += '<a class="card-link ig" href="' + escapeAttr(item.ig) + '" target="_blank" rel="noopener">Instagram</a>';
+      }
+
+      card.innerHTML =
+        '<h3>' + escapeHtml(item.name) + '</h3>' +
+        '<div class="tags">' + tagsHtml + '</div>' +
+        ratingsHtml(item.ratings) +
+        '<p class="desc">' + escapeHtml(item.description) + '</p>' +
+        '<div class="audience"><span class="lbl">適合</span>' + escapeHtml(item.audience) + '</div>' +
+        '<div class="card-links">' + linksHtml + '</div>';
+
+      gridEl.appendChild(card);
+    });
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function escapeAttr(s) { return escapeHtml(s); }
+
+  function renderAll() {
+    renderGroupToggle();
+    renderSubtabs();
+    renderHeading();
+    renderGrid();
+  }
+
+  renderAll();
+})();
+</script>
+
+</body>
+</html>
