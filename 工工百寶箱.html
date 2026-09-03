@@ -380,7 +380,7 @@
 
   <footer class="note">
     部分連結具時效性或非官方機構性質：梅竹黑客松官網每年改版更新網址；STP種子人才培訓計畫是民間（台灣董事學會）而非政府計畫；SMIT採購認證部分梯次的在校生報名資格建議先洽詢協會確認。NVIDIA Omniverse於2026年5月起開放免費使用，若政策調整請以官網為準。本站資源彙整日期 2026-09-02。<br>
-    內容若有錯誤、連結失效，或想補充資源，歡迎來信 <a class="footer-link" href="mailto:e25469511@gmail.com">e25469511@gmail.com</a>。
+    內容若有錯誤、連結失效，或想補充資源，歡迎來信 <a class="footer-link" id="feedback-email" href="#">（點此顯示信箱）</a>。
   </footer>
 
 </div>
@@ -1275,6 +1275,16 @@
   }
 
   renderAll();
+})();
+
+(function () {
+  var user = 'e25469511';
+  var domain = 'gmail.com';
+  var addr = user + '@' + domain;
+  var link = document.getElementById('feedback-email');
+  if (!link) return;
+  link.href = 'mailto:' + addr;
+  link.textContent = addr;
 })();
 </script>
 
